@@ -215,7 +215,7 @@ impl EGraph {
         match node {
             SerializedNode::Function { name, offset } => {
                 assert!(sort.is_none());
-                format!("function-{}-{}", offset, name).into()
+                format!("{}{}", name.to_string().to_lowercase(), offset).into()
             }
             SerializedNode::Primitive(value) => format!(
                 "primitive-{}",
